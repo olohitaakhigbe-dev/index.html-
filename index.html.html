@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at Atlas Bench | Join Our Team | Atlas Bench</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1f4e;
+  --navy2:#182f76;
+  --blue:#1a56db;
+  --teal:#00c2e0;
+  --gold:#f59e0b;
+  --white:#ffffff;
+  --light:#f4f6fb;
+  --text:#1e293b;
+  --muted:#64748b;
+}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+
+/* ANNOUNCEMENT BAR */
+.ann-bar{background:#0a1535;color:white;text-align:center;padding:10px 1rem;font-size:13px;display:flex;align-items:center;justify-content:center;gap:10px;position:relative}
+.ann-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;flex-shrink:0}
+.ann-bar span{color:rgba(255,255,255,0.7)}
+.ann-bar strong{color:white}
+.ann-link{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);color:white;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;text-decoration:none;white-space:nowrap}
+.ann-close{position:absolute;right:16px;color:rgba(255,255,255,0.5);font-size:18px;cursor:pointer;line-height:1}
+
+/* NAV */
+nav{background:var(--navy2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100}
+.nav-left{display:flex;align-items:center;gap:20px}
+.logo{color:white;font-weight:800;font-size:17px;letter-spacing:.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:34px;height:34px;background:white;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:22px;height:22px}
+.nav-badge{display:flex;align-items:center;gap:8px;border-left:1px solid rgba(255,255,255,0.2);padding-left:20px}
+.nav-badge img{height:28px;opacity:0.9}
+.nav-badge-text{color:rgba(255,255,255,0.85);font-size:11px;line-height:1.3}
+.nav-badge-text strong{display:block;color:white;font-size:12px}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:6px;transition:background .15s,color .15s}
+.nav-links a:hover{background:rgba(255,255,255,0.1);color:white}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-search{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;padding:7px 14px;border-radius:6px;font-size:13px;width:180px}
+.nav-search::placeholder{color:rgba(255,255,255,0.45)}
+.nav-chat{color:rgba(255,255,255,0.7);font-size:20px;cursor:pointer;padding:6px}
+.btn-contact{background:white;color:var(--navy2);font-weight:700;font-size:13px;padding:8px 18px;border-radius:6px;text-decoration:none;white-space:nowrap}
+
+/* WINNER BANNER */
+.winner-banner{background:linear-gradient(135deg,#0a1535 0%,#0d2060 50%,#0a1535 100%);padding:60px 2rem;text-align:center;position:relative;overflow:hidden;display:none}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#0a1535 0%,#0d2a6b 55%,#0f3080 100%);padding:80px 2rem 90px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,194,224,0.07) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(26,86,219,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px}
+.hero h1{color:white;font-size:clamp(36px,5vw,60px);font-weight:800;line-height:1.1;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero h1 br{display:block}
+.hero p{color:rgba(255,255,255,0.7);font-size:17px;max-width:560px;margin:0 auto 50px;line-height:1.7}
+
+/* STATS */
+.stats{display:flex;justify-content:center;gap:0;max-width:700px;margin:0 auto;border:1px solid rgba(255,255,255,0.12);border-radius:12px;overflow:hidden;background:rgba(255,255,255,0.04);backdrop-filter:blur(8px)}
+.stat{flex:1;padding:24px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:28px;font-weight:800;color:white;line-height:1}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.55);margin-top:5px;line-height:1.4}
+
+/* TECH TICKER */
+.ticker-section{background:var(--light);padding:48px 0;overflow:hidden}
+.ticker-label{text-align:center;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.ticker-track{display:flex;gap:0;overflow:hidden}
+.ticker-row{display:flex;align-items:center;gap:0;animation:ticker 30s linear infinite;white-space:nowrap}
+.ticker-row2{animation:ticker2 35s linear infinite}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes ticker2{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.ticker-item{display:flex;align-items:center;gap:8px;padding:8px 20px;font-size:13px;color:var(--text);font-weight:500;white-space:nowrap}
+.ticker-item-icon{width:28px;height:28px;border-radius:6px;background:white;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 1px 3px rgba(0,0,0,0.08);flex-shrink:0}
+.ticker-sep{color:#cbd5e1;padding:0 4px}
+
+/* FILTER TABS */
+.filter-section{background:var(--white);padding:40px 2rem 0;max-width:1000px;margin:0 auto}
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.filter-tab{padding:8px 20px;border-radius:20px;font-size:13px;font-weight:600;border:1px solid #e2e8f0;background:white;color:var(--muted);cursor:pointer;transition:all .15s}
+.filter-tab:hover,.filter-tab.active{background:var(--navy2);color:white;border-color:var(--navy2)}
+
+/* JOBS SECTION */
+.jobs-section{padding:40px 2rem 60px;max-width:1000px;margin:0 auto}
+.no-jobs{text-align:center;padding:60px 20px;background:var(--light);border-radius:16px}
+.no-jobs-icon{width:72px;height:72px;background:#e2e8f0;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px}
+.no-jobs h3{font-size:22px;font-weight:700;color:var(--text);margin-bottom:10px}
+.no-jobs p{color:var(--muted);font-size:15px}
+
+/* WHY SECTION */
+.why-section{background:var(--light);padding:80px 2rem}
+.why-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-title{font-size:clamp(26px,3vw,38px);font-weight:800;margin-bottom:12px}
+.section-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:48px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.why-card{background:white;border-radius:14px;padding:28px;border:1px solid #e8edf5;transition:box-shadow .2s,transform .2s}
+.why-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.why-icon{width:42px;height:42px;border-radius:10px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px}
+.why-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--navy)}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* DNA SECTION */
+.dna-section{background:var(--navy2);padding:80px 2rem}
+.dna-inner{max-width:1100px;margin:0 auto}
+.dna-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:48px}
+.dna-card{border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px;position:relative}
+.dna-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--teal);margin-bottom:12px}
+.dna-card h4{color:white;font-size:16px;font-weight:700;margin-bottom:10px}
+.dna-card p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.65}
+
+/* CTA */
+.cta-section{background:linear-gradient(160deg,#0a1535,#0d2a6b);padding:90px 2rem;text-align:center}
+.cta-section h2{color:white;font-size:clamp(28px,4vw,46px);font-weight:800;margin-bottom:16px;max-width:600px;margin-left:auto;margin-right:auto}
+.cta-section p{color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto}
+.btn-cta{background:white;color:var(--navy2);font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-cta svg{width:16px;height:16px}
+
+/* FOOTER */
+footer{background:#080f24;color:rgba(255,255,255,0.6);padding:56px 2rem 32px}
+.footer-inner{max-width:1100px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-col h4{color:white;font-size:13px;font-weight:700;margin-bottom:16px}
+.footer-col p,.footer-col a{color:rgba(255,255,255,0.55);font-size:13px;line-height:2;text-decoration:none;display:block}
+.footer-col a:hover{color:white}
+.footer-contact p{line-height:1.8;font-size:13px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px}
+.footer-bottom-links{display:flex;gap:16px}
+.footer-bottom-links a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:12px}
+.footer-bottom-links a:hover{color:white}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="ann-bar">
+  <span class="ann-dot"></span>
+  <span><strong>AT TEAM '26 ·</strong> WE WON. Live now in Anaheim. Rising Star Partner of the Year, Americas.</span>
+  <a href="#" class="ann-link">See our plan →</a>
+  <span class="ann-close">×</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#182f76"/>
+          <path d="M7 12l3.5 3.5L17 8" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      ATLAS BENCH
+    </a>
+    <div class="nav-badge">
+      <div style="font-size:11px;color:rgba(255,255,255,0.7);line-height:1.3">
+        <div style="color:white;font-weight:700;font-size:12px">Atlassian</div>
+        Platinum Solution Partner
+      </div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Company</a>
+    <a href="#">Products</a>
+    <a href="#">Services</a>
+    <a href="#">Resources</a>
+  </div>
+  <div class="nav-right">
+    <input class="nav-search" type="text" placeholder="Search...">
+    <span class="nav-chat">💬</span>
+    <a href="#" class="btn-contact">Contact us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">We're Hiring</div>
+  <h1>Build the Future of<br>Enterprise Collaboration</h1>
+  <p>Join a team of innovators transforming how the world's leading companies work with Atlassian and AI-powered solutions.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">$10B+</div><div class="stat-label">Enterprise Value<br>Supported</div></div>
+    <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Engagements<br>Delivered</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Team<br>Members</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Client<br>Satisfaction</div></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<section class="ticker-section">
+  <div class="ticker-label">Technologies & Products We Work With</div>
+  <div class="ticker-track">
+    <div class="ticker-row">
+      <div class="ticker-item"><div class="ticker-item-icon">🔵</div>Support Agent for Confluence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟣</div>Support Agent for JSM</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔷</div>Atlassian Cloud Platform</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟦</div>Service Collection</div>
+      <div class="ticker-item"><div class="ticker-item-icon">⚡</div>Rovo Dev Agents</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔗</div>Bitbucket Pipelines</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🧠</div>Atlassian Intelligence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">📊</div>Atlassian Analytics</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🎯</div>Strategy Collection</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🤝</div>Teamwork Collection</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🛡</div>Guard</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🎬</div>Loom</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔵</div>Support Agent for Confluence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟣</div>Support Agent for JSM</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔷</div>Atlassian Cloud Platform</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟦</div>Service Collection</div>
+      <div class="ticker-item"><div class="ticker-item-icon">⚡</div>Rovo Dev Agents</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔗</div>Bitbucket Pipelines</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🧠</div>Atlassian Intelligence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">📊</div>Atlassian Analytics</div>
+    </div>
+  </div>
+  <div style="margin-top:12px" class="ticker-track">
+    <div class="ticker-row ticker-row2">
+      <div class="ticker-item"><div class="ticker-item-icon">🟠</div>Jira Service Management</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔵</div>Bitbucket</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔷</div>Jira</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🌊</div>Confluence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟦</div>Trello</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🎯</div>Goals</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔥</div>Forge</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔮</div>Rovo</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🧭</div>Compass</div>
+      <div class="ticker-item"><div class="ticker-item-icon">💡</div>Jira Product Discovery</div>
+      <div class="ticker-item"><div class="ticker-item-icon">📐</div>Jira Align</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔺</div>Focus</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟠</div>Jira Service Management</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔵</div>Bitbucket</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔷</div>Jira</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🌊</div>Confluence</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🟦</div>Trello</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🎯</div>Goals</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔥</div>Forge</div>
+      <div class="ticker-item"><div class="ticker-item-icon">🔮</div>Rovo</div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER + JOBS -->
+<div class="filter-section">
+  <div class="filter-tabs">
+    <button class="filter-tab active">All</button>
+    <button class="filter-tab">App Development</button>
+    <button class="filter-tab">AI & Automation</button>
+    <button class="filter-tab">Cloud & DevOps</button>
+    <button class="filter-tab">Enterprise Solutions</button>
+  </div>
+</div>
+<div class="jobs-section" id="jobs">
+  <div class="no-jobs">
+    <div class="no-jobs-icon">💼</div>
+    <h3>No Open Positions Right Now</h3>
+    <p>We're always looking for exceptional talent. Check back soon for new opportunities.</p>
+  </div>
+</div>
+
+<!-- WHY ATLAS BENCH -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-eyebrow">Why Atlas Bench?</div>
+    <h2 class="section-title">Where Ambitious Minds Thrive</h2>
+    <p class="section-sub">We are not just building software. We are shaping how enterprises collaborate, innovate, and succeed.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h3>High-Impact Work</h3>
+        <p>Work directly with Fortune 500 companies on engagements that transform how thousands of people work every day.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔬</div>
+        <h3>Deep Technical Expertise</h3>
+        <p>AI, automation, and cloud architecture. Work with the technologies reshaping enterprise software.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📈</div>
+        <h3>Accelerate Your Career</h3>
+        <p>Mentorship from industry experts, paid certifications, and clear paths to leadership roles.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⭐</div>
+        <h3>Elite Team</h3>
+        <p>Collaborate with Atlassian-certified experts, architects, and engineers who are the best at what they do.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Your Ideas Matter</h3>
+        <p>Flat hierarchy, open dialogue, and direct access to leadership. Your voice shapes our direction.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚀</div>
+        <h3>Ship Work That Matters</h3>
+        <p>Agile teams, rapid iterations, and the autonomy to make decisions. No bureaucracy slowing you down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DNA -->
+<section class="dna-section">
+  <div class="dna-inner">
+    <div class="section-eyebrow" style="color:var(--teal)">Our DNA</div>
+    <h2 class="section-title" style="color:white">Built on Strong Values</h2>
+    <div class="dna-grid">
+      <div class="dna-card">
+        <div class="dna-num">01</div>
+        <h4>Integrity in Action</h4>
+        <p>We do not just talk about doing the right thing. We live it.</p>
+      </div>
+      <div class="dna-card">
+        <div class="dna-num">02</div>
+        <h4>Customer Obsession</h4>
+        <p>Our clients' success is our success. Period.</p>
+      </div>
+      <div class="dna-card">
+        <div class="dna-num">03</div>
+        <h4>Radical Ownership</h4>
+        <p>We own outcomes, celebrate wins, and learn from failures.</p>
+      </div>
+      <div class="dna-card">
+        <div class="dna-num">04</div>
+        <h4>No Borders</h4>
+        <p>Collaboration and knowledge sharing across every team.</p>
+      </div>
+      <div class="dna-card">
+        <div class="dna-num">05</div>
+        <h4>Never Stop Learning</h4>
+        <p>Growth is mandatory. Stagnation is not an option.</p>
+      </div>
+      <div class="dna-card">
+        <div class="dna-num">06</div>
+        <h4>Inclusive by Design</h4>
+        <p>Every voice matters. Diversity drives innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Build Something Amazing?</h2>
+  <p>Join a team that's transforming enterprise collaboration. Your next chapter starts here.</p>
+  <a href="#jobs" class="btn-cta">View Open Positions <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-contact">
+        <div style="color:white;font-weight:800;font-size:16px;margin-bottom:16px">ATLAS BENCH</div>
+        <p>407-794-1235 | Monday – Friday</p>
+        <p>St Petersburg, FL 33702, USA.</p>
+        <p>engagement@atlas-bench.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Products</a>
+        <a href="#">Company</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Blog</a>
+        <a href="#">Whitepapers</a>
+        <a href="#">Documentation</a>
+        <a href="#">Videos</a>
+        <a href="#">RSS Feed</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2026 Atlas Bench</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">DSAR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.ann-close').addEventListener('click',function(){
+  document.querySelector('.ann-bar').style.display='none';
+});
+document.querySelectorAll('.filter-tab').forEach(tab=>{
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
